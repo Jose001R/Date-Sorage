@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Storage</title>
+    <link rel="stylesheet" href="stilos.css">
+    <link rel="shortcut icon" href="/images/favicon-32x32.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="box-container">
+            <div class="files">
+                <div class="logo">
+                    <img src="images/logo.svg" alt="">
+                </div>
+                <div class="upload">
+                    <div class="box-image"><img src="images/icon-document.svg" alt=""></div>
+                    <div class="box-image"><img src="images/icon-folder.svg" alt=""></div>
+                    <div class="box-image"><img src="images/icon-upload.svg" alt=""></div>
+                </div>
+            </div>
+            <div class="box-progreso">
+                <div class="gbleft">
+                    <h1>185</h1><h3>GB LEFT</h3>
+                </div>
+                <div class="datos-barra">
+                    <div class="descripcion">
+                        <span>You´ve used<strong> 815 GB </strong>of you storage</span><br>
+                        <input type="range" value="0" min="0" max="1000" onmousemove="sliderValue(this.value)">
+                    </div>
+                    <div class="spacio-gb">
+                        <span id="range">0</span><h6>GB</h6>
+                        <span>1000 GB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function sliderValue(value){
+            document.getElementById('range').innerHTML = value;
+        }
+    </script>
+</body>
+</html>

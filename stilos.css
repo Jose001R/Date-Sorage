@@ -1,0 +1,222 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+
+body{
+    /* font-family: 'Raleway', sans-serif;
+    font-weight: 400, 700; */
+    background-color: var(--Very-Dark-Blue);
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('images/bg-desktop.png');
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.box-container{
+    width: 60%;
+    /* height: 300px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.files{
+    width: 33%;
+    height: 50%;
+    background-color: var(--Dark-Blue);
+    border-radius: 6px 70px 6px 6px;
+}
+.files .logo{
+    width: 60%;
+    height: 40px;
+    margin: 25px 0 0 25px;
+}
+.files .logo > img{
+    width: 75%;
+}
+.upload{
+    width: 80%;
+    height: 60px;
+    margin: 10px 0 0 25px;
+}
+.upload .box-image{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--Very-Dark-Blue);
+    margin: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-image > img{
+    position: absolute;
+}
+
+.box-progreso{
+    position: relative;
+    bottom: -22px;
+    width: 64%;
+    height: 35%;
+    background-color: var(--Dark-Blue);
+    border-radius: 6px;
+}
+.gbleft{
+    position: absolute;
+    top: -40px;
+    right: 30px;
+    width: 150px;
+    height: 60px;
+    background-color: var(--Pale-Blue);
+    border-radius: 10px 10px 10px 10px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.gbleft::after{
+    content: "";
+    position: absolute;
+    top: 35px;
+    right: 0;
+    border-top: 20px solid var(--Pale-Blue);
+    border-left: 20px solid transparent;
+    border-right: 20px solid var(--Pale-Blue);
+    border-bottom: 20px solid transparent;
+}
+.gbleft h1{
+    color: var(--Very-Dark-Blue);
+    font-size: 30px;
+    font-weight: 400, 700;
+    font-family: 'Raleway', sans-serif;
+
+}
+.gbleft  h3{
+    color: var(--Grayish-Blue);
+    font-size: 10px;
+    margin-left: 6px;
+}
+.datos-barra{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.descripcion{
+    width: 90%;
+    height: auto;
+    margin-top: 1px;
+}
+.descripcion span{
+    color: var(--Grayish-Blue);
+    font-size: 12px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bolder;
+}
+.descripcion span > strong{
+    color: var(--Pale-Blue);
+}
+.descripcion input{
+    width: 100%;
+    margin: 10px 0 0;
+    appearance: none;
+    outline: none;
+    border-radius: 10px;
+    background: var(--Very-Dark-Blue);
+    background: -webkit-linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    /* background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%)); */
+    overflow: hidden;
+}
+.descripcion input::-webkit-range-progress{
+    background-color: green;
+}
+.descripcion input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--Pale-Blue);
+}
+
+.datos-barra .spacio-gb{
+    position: relative;
+    top: -3px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+.spacio-gb span, h6{
+    color: var(--Pale-Blue);
+    font-size: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+.spacio-gb h6{
+    position: absolute;
+    left: 25px;
+}
+
+
+/* TABLETS */
+@media (min-width:375px) and (max-width: 1000px){
+    .box-container{
+        width: 80%;
+    }
+    .upload{
+        width: 100%;
+        height: 60px;
+        margin: 0;
+    }
+    .upload .box-image{
+        margin-top: -2px;
+        margin-left: 5px;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    
+}
+@media (max-width: 375px){
+    .box-container{
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .files{
+        width: 100%;
+    }
+    .box-progreso{
+        position: relative;
+        bottom: -22px;
+        width: 100%;
+        height: 120px;
+    }
+    .gbleft{
+        width: 50%;
+        top: 100px;
+        left: 50px;
+        right: 0;
+        bottom: 0;
+    }
+    .gbleft::after{
+        border: none;
+    }
+}
